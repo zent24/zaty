@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Awak ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow-x: hidden; /* Supaya love tak buat horizontal scroll */
+        }
+
+        /* Skrin Start - Biar dia center */
+        #start-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 10; /* Atas sekali */
+        }
+
+        .btn-start {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .btn-start:hover {
+            transform: scale(1.1);
+        }
+
+        /* Skrin Mesej (Hidden asal) */
+        #message-screen {
+            display: none;
+            padding: 50px 20px;
+            animation: fadeIn 2s;
+            position: relative;
+            z-index: 5; /* Di bawah teks */
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 10; /* Teks atas love */
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+        }
+
+        p.ucapan {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 600px; /* Lebarkan sikit untuk mesej panjang kau */
+            margin: 0 auto 20px auto;
+            text-align: justify; /* Supaya nampak kemas */
+            background: rgba(255, 235, 238, 0.7); /* Background transparens sikit kat teks */
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .heart-main {
+            color: #ff4081;
+            font-size: 50px;
+            animation: beat 0.8s infinite alternate;
+        }
+
+        /* --- Bahagian Love di Tepi --- */
+        .side-heart {
+            position: absolute;
+            color: rgba(255, 64, 129, 0.3); /* Transparens sikit supaya tak serabut */
+            font-size: 25px; /* Saiz love */
+            user-select: none;
+            pointer-events: none; /* Takleh klik */
+            animation: floatHeart 10s linear infinite;
+        }
+
+        /* Keyframes untuk floating effect */
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes beat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        /* --- Bahagian Gallery Gambar --- */
+        .photo-gallery {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 15px; /* Jarak antara gambar */
+            position: relative;
+            z-index: 10; /* Teks atas love */
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 200px; /* Set tinggi yang sama untuk semua */
+            object-fit: cover; /* Biar gambar tak 'penyet', dia akan crop sikit */
+            border-radius: 15px;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Effect bila hover atas gambar */
+        .photo-gallery img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p.ucapan { font-size: 1rem; max-width: 90%; }
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr); /* 2 gambar sebaris kat phone */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="start-screen">
+        <div class="heart-main" style="margin-bottom: 20px;">❤️</div>
+        <button class="btn-start" onclick="mulakan()">Klik Sini Nur Izzaty</button>
+    </div>
+
+    <div id="message-screen">
+        
+        <div class="main-content">
+            <div class="heart-main">❤️</div>
+            <h1>Hai Sayang...</h1>
+            <p class="ucapan">
+                haii zaty saya nak bagitahu awak sesuatu ni yang saya sangat sangat suka awak. awak buat saya rasa selesa bila dengan awak saya. bila saya dengan awak saya rasa tenang dan tk perlu risau pun. awak tahu tk kalau awak puji saya kan saya mesti akan blushing dengan awak sumpah. saya betul betul nak hargai awak and nak jaga awak. saya harap kita boleh kenal each other betul betul and saya harap kita dapat kebahagian dalam relay ni. kenapa sayaaa pilih awak sebab untuk pertama awak seorang yang sangat berhati awak and lembut itu saja dah buat saya cair dah awak. lepas tu yang kedua kenapa saya nak awak sebab saya nampak awak betul betul cantik. you are sooo beautiful nur izzaty i really like you and i really love you hihihihi. ✨
+            </p>
+            <p style="font-size: 0.9rem; color: #999;">- Dari Hero Awak -</p>
+            <p style="font-size: 0.9rem; color: #d81b60; margin-top: 20px;">(Scroll down ❤️)</p>
+        </div>
+
+        <div class="photo-gallery">
+            <img src="img/WhatsApp Image 2026-04-01 at 7.56.09 AM (2).jpeg" alt="Memori 1">
+            <img src="img/WhatsApp Image 2026-04-01 at 7.56.14 AM.jpeg" alt="Memori 2">
+            <img src="img/zaty 2.jpeg" alt="Memori 3">
+            <img src="img/zaty 1.jpeg" alt="Memori 4">
+            <img src="img/zaty 3.jpeg" alt="Memori 5">
+            <img src="img/WhatsApp Image 2026-04-01 at 7.56.09 AM (1).jpeg" alt="Memori 6">
+            </div>
+
+    </div>
+
+    <script>
+        function mulakan() {
+            // Sembunyikan skrin start
+            document.getElementById('start-screen').style.display = 'none';
+            // Tunjukkan skrin mesej
+            document.getElementById('message-screen').style.display = 'block';
+            // Ubah body overflow supaya boleh scroll
+            document.body.style.overflow = 'auto';
+            // Jana love kat tepi
+            createSideHearts(50); // Nombor 50 tu berapa banyak love nak letak
+        }
+        
+        // Asal body tak boleh scroll
+        document.body.style.overflow = 'hidden';
+
+        // Fungsi JavaScript untuk jana love kat tepi
+        function createSideHearts(count) {
+            const screen = document.getElementById('message-screen');
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'side-heart';
+                heart.innerText = '❤️'; // Ikon love
+                
+                // Letak kedudukan rawak secara horizontal (0 hingga 100%)
+                heart.style.left = Math.random() * 100 + 'vw';
+                
+                // Variasi saiz sikit
+                const size = 15 + Math.random() * 20;
+                heart.style.fontSize = size + 'px';
+                
+                // Variasi kelajuan animation sikit
+                const duration = 8 + Math.random() * 7; // Antara 8s hingga 15s
+                heart.style.animationDuration = duration + 's';
+                
+                // Variasi delay sikit supaya tak naik serentak
+                heart.style.animationDelay = Math.random() * 5 + 's';
+
+                screen.appendChild(heart);
+            }
+        }
+    </script>
+
+</body>
+</html>
